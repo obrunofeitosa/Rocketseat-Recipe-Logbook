@@ -13,67 +13,91 @@ body {
     flex-direction: column;
     align-items: center;
     min-height: 100vh;
+    
+    /* Configuração de fonte base global para evitar repetição */
+    font-family: 'Alice', serif;
+    font-weight: 400;
 }
 
 main.recipe-card {
     background-color: #F0E8C2;
-    width: 50vw;
+    width: 90%; /* Ocupa 90% da tela no celular */
     border-radius: 30px;
-    padding: 50px;
-    margin: 10vh 0 10vh 0;
+    padding: 40px;
+    margin: 8vh 0 4vh 0;
+    box-sizing: border-box;
 }
 
-main.recipe-card img {
+/* Quando a tela for de tablet ou PC (largura maior que 768px) */
+@media (min-width: 768px) {
+    main.recipe-card {
+        width: 50vw; /* Ocupa 50% da largura da tela no PC e escala junto com ela */
+    }
+}
+
+main.recipe-card img.cupcake-image {
     border-radius: 30px;
     width: 100%;
+    display: block; /* Evita espaçamento em branco abaixo da imagem */
+    margin-bottom: 10px;
 }
 
-h1 {
-    font-family: 'Alice', serif;
-    font-size: 40px;
-    font-weight: 400;
-    color: #291B1A;
-}
-
+/* Tipografia e espaçamento geral */
 h1, h2, p, ul {
-    padding: 10px;
     line-height: 2rem;
 }
 
+h1 {
+    font-size: 40px;
+    color: #291B1A;
+    padding: 20px 0;
+}
+
 h2 {
-    font-family: 'Alice', serif;
     font-size: 24px;
-    font-weight: 400;
+    color: #291B1A;
+    padding: 20px 0;
 }
 
-p {
-    font-family: 'Alice', serif;
+p, li {
     font-size: 16px;
-    font-weight: 400;
-}
-
-li {
-    font-family: 'Alice', serif;
-    font-size: 16px;
-    font-weight: 400;
-    list-style-type: disc;
-
-}
-
-ul.recipe-time li{
-    list-style-type: none;
-}
-
-ul.recipe-ingredients{
-    padding: 0rem 0rem 0rem 2.5rem;
-}
-
-
-p, li{
     color: #573A37;
 }
 
-footer p{
+p {
+    padding: 10px 0;
+}
+
+/* Seções de Listas (Tempo e Ingredientes) */
+ul.recipe-time {
+    padding: 10px 0;
+}
+
+ul.recipe-time li {
+    list-style-type: none;
+}
+
+ul.recipe-ingredients {
+    padding: 10px 0 10px 2.5rem;
+}
+
+ul.recipe-ingredients li {
+    list-style-type: disc;
+    padding: 4px 0; /* Espaçamento leve entre ingredientes */
+}
+
+/* Rodapé */
+footer p {
     color: #F0E8C2;
     text-align: center;
+    margin-bottom: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px; /* Espaço entre o texto e o ícone de coração */
+}
+
+footer p img {
+    width: 16px;
+    height: 16px;
 }
